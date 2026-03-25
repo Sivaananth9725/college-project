@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: crop-disease-backend
+    runtime: python
+    buildCommand: ./build.sh
+    startCommand: gunicorn core.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
